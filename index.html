@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=s, initial-scale=1.0">
+  <title>Array of object</title>
+  <style>
+    body {
+      background-color: black;
+
+    }
+
+    h1 {
+      color: aqua;
+    }
+
+    .green {
+      background-color: green;
+      color: black;
+      border-radius: 8px;
+    }
+
+    pre {
+      font-size: 20px;
+      background-color: aqua;
+      border-radius: 12px;
+      padding-left: 8px;
+    }
+
+    span {
+      background-color: black;
+      color: red;
+    }
+
+    p {
+      font-size: 22px;
+      font-weight: bold;
+      background-color: red;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align: center;">Array Of Object</h1>
+  <p>Question 1: We are interested in retrieving only the name of the students and all the names should be in caps.</p>
+  <pre>
+    <span>
+      let studentRecords = [
+  {name: 'Jhon',id: 123 ,marks:98},
+  {name: 'baba',id: 101 ,marks:23},
+  {name: 'yaga',id: 200 ,marks:45},
+  {name: 'wick',id: 115 ,marks:75}
+]
+</span>
+<h2>Code</h2>
+<span class="green">
+const nameUpperCase = studentRecords.map(element=>(element.name.toUpperCase()))
+console.log(nameUpperCase)
+</span>
+  </pre>
+  <p>Question 2: Suppose we have the same dataset as above but this time we want to get the details of students who
+    scored more than 50 marks.</p>
+  <pre>
+    <span>
+      let studentRecords = [
+  {name: 'Jhon',id: 123 ,marks:98},
+  {name: 'baba',id: 101 ,marks:23},
+  {name: 'yaga',id: 200 ,marks:45},
+  {name: 'wick',id: 115 ,marks:75}
+]
+</span>
+<h2>Code</h2>
+<span class="green">
+const highestMark=[]
+ studentRecords.forEach(element=>{
+    if(element.marks>50){
+       highestMark.push(element) 
+    }
+})
+console.log(highestMark)
+</span>
+</pre>
+  <p>Question 3. Retrieve the details of students who scored more than 50 marks and have id greater than 120.</p>
+  <pre>
+  <span>
+  let studentRecords = [
+{name: 'Jhon',id: 123 ,marks:98},
+{name: 'baba',id: 101 ,marks:23},
+{name: 'yaga',id: 200 ,marks:45},
+{name: 'wick',id: 115 ,marks:75}
+]
+</span>
+<h2>Code</h2>
+<span class="green">
+const highestIdMarks=[];
+studentRecords.forEach(element=>{
+if(element.id>120 && element.marks>50){
+highestIdMarks.push(element)
+}
+})
+console.log(highestIdMarks);
+</span>
+</pre>
+
+  </pre>
+  <p>Question 4: Consider the same scenario we have discussed above, but this time we would like to know the sum total
+    of the marks of the students.</p>
+  <pre>
+  <span>
+let studentRecords = [
+{name: 'Jhon',id: 123 ,marks:98},
+{name: 'baba',id: 101 ,marks:23},
+{name: 'yaga',id: 200 ,marks:45},
+{name: 'wick',id: 115 ,marks:75}
+]
+</span>
+<h2>Code</h2>
+<span class="green">
+let sumOFMarks=0
+studentRecords.map(element=>{
+sumOFMarks+=element.marks;
+})
+console.log(sumOFMarks)
+</span>
+</pre>
+  <p>Question 5: This time we want to get only the names of the students who scored more than 50 marks from the same
+    dataset used above.</p>
+  <pre>
+    <span>
+    let studentRecords = [
+{name: 'Jhon',id: 123 ,marks:98},
+{name: 'baba',id: 101 ,marks:23},
+{name: 'yaga',id: 200 ,marks:45},
+{name: 'wick',id: 115 ,marks:75}
+]
+</span>
+<h2>Code</h2>
+<span class="green">
+let highMarks=[];
+studentRecords.forEach(element=>{
+if(element.marks>50){
+  highMarks .push(element.name)
+}
+})
+console.log(highMarks);
+</span>
+</pre>
+  <p>Question 6: This time we are required to print the sum of marks of the students with id > 120.</p>
+  <pre>
+    <span>
+    let studentRecords = [
+{name: 'Jhon',id: 123 ,marks:98},
+{name: 'baba',id: 101 ,marks:23},
+{name: 'yaga',id: 200 ,marks:45},
+{name: 'wick',id: 115 ,marks:75}
+]
+</span>
+<h2>Code</h2>
+<span class="green">
+    let SumOfHighestId=0;
+    studentRecords.forEach(element=>{
+        if(element.id>120){
+          SumOfHighestId+=element.marks
+        }
+    })
+    console.log( SumOfHighestId)
+  </span>
+</pre>
+  <p>Question 7: This time we are required to print the total marks of the students with marks greater than 50 after a
+    grace of 15 marks has been added to those students who scored less than 50.</p>
+  <pre>
+    <span>
+      let studentRecords = [
+      {name: 'Jhon',id: 123 ,marks:98},
+      {name: 'baba',id: 101 ,marks:23},
+      {name: 'yaga',id: 200 ,marks:45},
+      {name: 'wick',id: 115 ,marks:75}
+  ]
+    </span>
+   <h2>Code</h2>
+<span class="green">
+     studentRecords.forEach(element=>{
+    if(element.marks< 50){
+        element.marks+=15
+    }
+})
+let graceMarks=0;
+studentRecords.forEach(element=>{
+    if(element.marks>50){
+        graceMarks +=element.marks
+    }
+})
+console.log(graceMarks)
+</span>
+</pre>
+  <p>Question 8: Create 6 objects, each object will have name, class, roll no as properties. Store these objects in an
+    array of objects.</p>
+  <pre>
+    <span>
+      const students =[
+      {rollno:1,name:'jhon',class:12},
+      {rollno:2,name:'sown',class:12},
+      {rollno:3,name:'wick',class:12},
+      {rollno:4,name:'trixi',class:12},
+      {rollno:5,name:'taylor',class:12},
+      {rollno:6,name:'selena',class:12}
+      ]
+    </span>
+    <span class="green">
+     
+    </span>
+     
+  <script src="./main.js"></script>
+</body>
+
+</html>
